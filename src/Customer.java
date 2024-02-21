@@ -27,11 +27,29 @@ public class Customer implements DiscountRate{
 
     @Override
     public double getServiceMemberDiscount() {
-        return 0;
+        switch (customerType) {
+            case "Premium":
+                return 0.20;
+            case "Gold":
+                return 0.15;
+            case "Silver":
+                return 0.10;
+            default:
+                return 0.0;
+        }
     }
 
     @Override
     public double getProductMemberDiscount() {
-        return 0;
+        switch (customerType) {
+            case "Premium":
+                return 0.10;
+            case "Gold":
+                return 0.10;
+            case "Silver":
+                return 0.10;
+            default:
+                return 0.0;
+        }
     }
 }
